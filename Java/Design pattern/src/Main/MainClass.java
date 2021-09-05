@@ -1,5 +1,6 @@
 package Main;
 
+import Decorator.*;
 import Observer.MobileDisplay;
 import Observer.TVDisplay;
 import Observer.WeatherStation;
@@ -25,5 +26,14 @@ public class MainClass {
         for(int i = 0; i < 10; i++) {
             weatherStation.notifyObserver();
         }
+
+//        decorator
+        Shape circle = new Circle();
+        Shape rectangular = new Rectangular();
+        circle.draw();
+        rectangular.draw();
+
+        Shape circle1 = new FillColorDecorator(circle, Color.RED);
+        circle1.draw();
     }
 }
